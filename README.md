@@ -2,7 +2,7 @@
 
 A clean, professional personal portfolio website built with vanilla HTML, CSS, and JavaScript.
 
-Designed for a B.Tech Computer Science Engineering student building a foundation in cybersecurity and software engineering.
+Designed for Mohammed Shahabuddin Ghori — a B.Tech Computer Science Engineering student building a foundation in cybersecurity and software engineering.
 
 ## Technologies
 
@@ -49,7 +49,6 @@ Open `index.html` and search/replace the following placeholders:
 
 | Placeholder | Replace With |
 |---|---|
-| `[Your Name]` | Your actual name |
 | `[yourusername]` | Your GitHub username |
 | `your.email@example.com` | Your email address |
 
