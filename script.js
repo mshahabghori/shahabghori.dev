@@ -211,12 +211,15 @@
         document.body.style.overflow = '';
     }
 
-    // Click on cert image to open lightbox
-    document.querySelectorAll('.cert-image-wrapper').forEach(function (wrapper) {
-        wrapper.addEventListener('click', function () {
-            var img = this.querySelector('.cert-image');
-            if (img) {
-                openLightbox(img.src, img.alt);
+    // Click on cert card to open lightbox
+    document.querySelectorAll('.cert-card[data-cert-src]').forEach(function (card) {
+        card.addEventListener('click', function (event) {
+            // Don't open lightbox if user clicked the View Credential link
+            if (event.target.closest('.cert-btn')) return;
+            var src = card.getAttribute('data-cert-src');
+            var alt = card.getAttribute('data-cert-alt') || 'Certificate preview';
+            if (src) {
+                openLightbox(src, alt);
             }
         });
     });
