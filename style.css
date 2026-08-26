@@ -663,7 +663,10 @@ img {
     cursor: pointer;
     transition: border-color var(--transition-base), box-shadow var(--transition-base);
     flex-shrink: 0;
-    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
 }
 
 .cert-image-wrapper:hover {
@@ -673,8 +676,8 @@ img {
 
 .cert-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     display: block;
 }
 
@@ -702,6 +705,12 @@ img {
 
 .lightbox.active {
     display: flex;
+    animation: lightboxIn 0.25s ease;
+}
+
+@keyframes lightboxIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .lightbox-close {
@@ -725,10 +734,19 @@ img {
 
 .lightbox-image {
     max-width: 90vw;
-    max-height: 85vh;
+    max-height: 90vh;
+    object-fit: contain;
     border-radius: var(--radius-md);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     cursor: default;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.lightbox.active .lightbox-image {
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* ==========================================
@@ -1034,7 +1052,6 @@ img {
     .cert-image-wrapper {
         width: 100%;
         min-width: unset;
-        max-height: 200px;
     }
     
     .labs-grid {
