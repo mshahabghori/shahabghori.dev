@@ -137,7 +137,7 @@
         // Add fade-in class to elements that should animate
         var animatableElements = document.querySelectorAll(
             '.section-title, .section-subtitle, .about-text p, .skill-category, ' +
-            '.project-card, .lab-card, .cert-placeholder, .github-content, .contact-content, ' +
+            '.project-card, .lab-card, .education-card, .cert-card, .contact-content, ' +
             '.hero-greeting, .hero-name, .hero-title, .hero-description, .hero-buttons'
         );
 

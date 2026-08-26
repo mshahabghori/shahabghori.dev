@@ -441,7 +441,7 @@ img {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -503,6 +503,30 @@ img {
     flex-grow: 1;
 }
 
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.project-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.project-status {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -517,6 +541,12 @@ img {
     padding: 4px 10px;
     border-radius: 999px;
     border: 1px solid var(--accent-border);
+}
+
+.project-status-tag {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.2);
 }
 
 /* ==========================================
@@ -570,42 +600,137 @@ img {
    Certifications Section
    ========================================== */
 
-.cert-grid {
+.cert-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 20px;
 }
 
-.cert-placeholder {
+.cert-card {
     background: var(--bg-card);
-    border: 1px dashed var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: 40px 28px;
-    text-align: center;
+    padding: 24px;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-.cert-placeholder p {
-    color: var(--text-muted);
+.cert-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.cert-info {
+    flex: 1;
+}
+
+.cert-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.cert-issuer {
     font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.cert-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.cert-id {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.cert-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: center;
 }
 
 /* ==========================================
    GitHub Section
    ========================================== */
 
-.github-content {
-    text-align: center;
-    padding: 32px 0;
+.education-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
 }
 
-.github-description {
+.education-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.education-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.education-card-primary {
+    border-color: var(--accent-border);
+}
+
+.education-card-primary:hover {
+    border-color: var(--accent);
+}
+
+.education-info {
+    flex: 1;
+}
+
+.education-school {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+}
+
+.education-degree {
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-bottom: 28px;
-    font-size: 1rem;
+    margin-bottom: 0;
 }
 
-.github-content .btn svg {
-    margin-right: 4px;
+.education-year {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.education-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.education-grade {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
 }
 
 /* ==========================================
@@ -728,10 +853,6 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .hero-decoration {
         width: 400px;
         height: 400px;
@@ -815,6 +936,30 @@ img {
         grid-template-columns: 1fr;
     }
     
+    .education-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .education-card {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .education-meta {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .cert-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .cert-card {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
     .labs-grid {
         grid-template-columns: 1fr;
     }
@@ -864,6 +1009,14 @@ img {
     }
     
     .project-card {
+        padding: 20px;
+    }
+    
+    .education-card {
+        padding: 20px;
+    }
+    
+    .cert-card {
         padding: 20px;
     }
     

@@ -43,14 +43,13 @@ No build tools, server, or dependencies required.
 
 ## Customization
 
-### Change Your Name and Links
+### Update Your Links
 
-Open `index.html` and search/replace the following placeholders:
+The portfolio already contains your actual information. To update links, search `index.html` for:
 
-| Placeholder | Replace With |
-|---|---|
-| `[yourusername]` | Your GitHub username |
-| `your.email@example.com` | Your email address |
+- `https://github.com/mshahabghori` — Your GitHub profile
+- `https://www.linkedin.com/in/mshahabghori/` — Your LinkedIn profile
+- `shahabghori2007@gmail.com` — Your email address
 
 ### Add Your Resume
 
@@ -76,16 +75,17 @@ Each project card follows this pattern:
     <div class="project-header">
         <span class="project-icon">📁</span>
         <div class="project-links">
-            <a href="https://github.com/you/project" class="project-link" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/mshahabghori/your-project" class="project-link" target="_blank" rel="noopener noreferrer">
                 <!-- GitHub icon SVG -->
             </a>
         </div>
     </div>
     <h3 class="project-title">Project Name</h3>
+    <p class="project-date">Start Date – End Date</p>
     <p class="project-description">Short description of the project.</p>
     <div class="project-tags">
         <span class="tag">Python</span>
-        <span class="tag">Linux</span>
+        <span class="tag">Git</span>
     </div>
 </article>
 ```
@@ -114,23 +114,19 @@ Copy an existing lab card and update the content:
 
 ### Add Certifications
 
-When you earn certifications, replace the placeholder with cards:
+Add new certification cards using this pattern:
 
 ```html
-<div class="cert-card">
-    <h3 class="cert-title">Certification Name</h3>
-    <p class="cert-issuer">Issuing Organization</p>
-    <p class="cert-date">Month Year</p>
-    <a href="credential-url" class="cert-link" target="_blank" rel="noopener noreferrer">View Credential</a>
-</div>
+<article class="cert-card">
+    <div class="cert-info">
+        <h3 class="cert-title">Certification Name</h3>
+        <p class="cert-issuer">Issuing Organization</p>
+        <p class="cert-date">Issued Month Year</p>
+        <p class="cert-id">Credential ID: XXXXXXX</p>
+    </div>
+    <a href="credential-url" class="btn btn-secondary cert-btn" target="_blank" rel="noopener noreferrer">View Credential</a>
+</article>
 ```
-
-### Update Social Links
-
-Search for the contact section and update:
-- Email address
-- GitHub profile URL
-- LinkedIn profile URL
 
 ## Design Decisions
 
