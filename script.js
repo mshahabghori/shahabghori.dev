@@ -189,4 +189,55 @@
         });
     });
 
+    // ==========================================
+    // Certificate Lightbox
+    // ==========================================
+
+    var lightbox = document.getElementById('cert-lightbox');
+    var lightboxImage = lightbox ? lightbox.querySelector('.lightbox-image') : null;
+    var lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+
+    function openLightbox(src, alt) {
+        if (!lightbox || !lightboxImage) return;
+        lightboxImage.src = src;
+        lightboxImage.alt = alt || 'Certificate preview';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Click on cert image to open lightbox
+    document.querySelectorAll('.cert-image-wrapper').forEach(function (wrapper) {
+        wrapper.addEventListener('click', function () {
+            var img = this.querySelector('.cert-image');
+            if (img) {
+                openLightbox(img.src, img.alt);
+            }
+        });
+    });
+
+    // Close lightbox
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener('click', function (event) {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+
 })();

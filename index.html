@@ -65,7 +65,6 @@
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">Projects</a>
                     <a href="https://github.com/mshahabghori" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="assets/resume/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Resume</a>
                 </div>
             </div>
             <div class="hero-decoration">
@@ -179,12 +178,7 @@
 
                 <article class="project-card">
                     <div class="project-header">
-                        <span class="project-icon">📁</span>
-                        <div class="project-links">
-                            <a href="https://github.com/mshahabghori/linux-roadmap" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            </a>
-                        </div>
+                        <span class="project-icon">🐧</span>
                     </div>
                     <h3 class="project-title">Linux Foundation Roadmap</h3>
                     <p class="project-date">Aug 2026 – Present</p>
@@ -283,15 +277,21 @@
             <h2 class="section-title">Certifications</h2>
             <div class="cert-list">
                 <article class="cert-card">
+                    <div class="cert-image-wrapper">
+                        <img src="assets/images/PythonCertification.jpg" alt="Python Bootcamp Certificate" class="cert-image" loading="lazy">
+                    </div>
                     <div class="cert-info">
                         <h3 class="cert-title">Complete 2025 Python Bootcamp: Learn Python from Scratch</h3>
                         <p class="cert-issuer">Udemy</p>
                         <p class="cert-date">Issued Nov 2025</p>
                         <p class="cert-id">Credential ID: UC-0b316e61-6f54-42f6-a152-c453d5ff4a5b</p>
+                        <a href="https://ude.my/UC-0b316e61-6f54-42f6-a152-c453d5ff4a5b" class="btn btn-secondary cert-btn" target="_blank" rel="noopener noreferrer">View Credential</a>
                     </div>
-                    <a href="https://ude.my/UC-0b316e61-6f54-42f6-a152-c453d5ff4a5b" class="btn btn-secondary cert-btn" target="_blank" rel="noopener noreferrer">View Credential</a>
                 </article>
                 <article class="cert-card">
+                    <div class="cert-image-wrapper">
+                        <img src="assets/images/CyberWorkshop.jpg" alt="Ethical Hacking Workshop Certificate" class="cert-image" loading="lazy">
+                    </div>
                     <div class="cert-info">
                         <h3 class="cert-title">Ethical Hacking — Remark Skill Technical Workshop</h3>
                         <p class="cert-issuer">Remarkskill Education, in association with Infinium, IIIT Hyderabad</p>
@@ -345,6 +345,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Certificate Lightbox -->
+    <div class="lightbox" id="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview">
+        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <img class="lightbox-image" src="" alt="Certificate preview">
+    </div>
 
     <script src="script.js"></script>
 </body>
