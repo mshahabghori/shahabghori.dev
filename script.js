@@ -196,13 +196,18 @@
     var lightbox = document.getElementById('cert-lightbox');
     var lightboxImage = lightbox ? lightbox.querySelector('.lightbox-image') : null;
     var lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+    var lightboxCaption = lightbox ? lightbox.querySelector('.lightbox-caption') : null;
 
-    function openLightbox(src, alt) {
+    function openLightbox(src, alt, title) {
         if (!lightbox || !lightboxImage) return;
         lightboxImage.src = src;
         lightboxImage.alt = alt || 'Certificate preview';
+        if (lightboxCaption) {
+            lightboxCaption.textContent = title || '';
+        }
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (lightboxClose) lightboxClose.focus();
     }
 
     function closeLightbox() {
@@ -211,15 +216,17 @@
         document.body.style.overflow = '';
     }
 
-    // Click on cert card to open lightbox
+    // Click on cert card or its View Certificate action to open lightbox
     document.querySelectorAll('.cert-card[data-cert-src]').forEach(function (card) {
         card.addEventListener('click', function (event) {
-            // Don't open lightbox if user clicked the View Credential link
-            if (event.target.closest('.cert-btn')) return;
+            // Don't open lightbox if user clicked an external link (e.g. Verify)
+            if (event.target.closest('a')) return;
             var src = card.getAttribute('data-cert-src');
             var alt = card.getAttribute('data-cert-alt') || 'Certificate preview';
+            var titleEl = card.querySelector('.cert-title');
+            var title = titleEl ? titleEl.textContent.trim() : '';
             if (src) {
-                openLightbox(src, alt);
+                openLightbox(src, alt, title);
             }
         });
     });
