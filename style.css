@@ -495,6 +495,15 @@ img {
     letter-spacing: -0.01em;
 }
 
+.project-title a {
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+.project-title a:hover {
+    color: var(--accent);
+}
+
 .project-description {
     font-size: 0.9rem;
     color: var(--text-secondary);
@@ -549,6 +558,12 @@ img {
     border-color: rgba(245, 158, 11, 0.2);
 }
 
+.project-status-tag-completed {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.25);
+}
+
 /* ==========================================
    Learning / Labs Section
    ========================================== */
@@ -594,6 +609,62 @@ img {
     padding: 4px 12px;
     border-radius: 999px;
     border: 1px solid var(--border);
+}
+
+.lab-status-completed {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.25);
+}
+
+.lab-status-next {
+    color: var(--accent-hover);
+    background: var(--accent-subtle);
+    border-color: var(--accent-border);
+}
+
+.lab-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.lab-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+    transition: color var(--transition-fast);
+}
+
+.lab-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Featured lab card — highlights the next learning target */
+.lab-card-featured {
+    border-color: var(--accent-border);
+    background: linear-gradient(180deg, rgba(37, 99, 235, 0.06) 0%, var(--bg-card) 100%);
+    position: relative;
+}
+
+.lab-card-featured:hover {
+    border-color: var(--accent);
+}
+
+.lab-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-hover);
+    background: var(--accent-subtle);
+    border: 1px solid var(--accent-border);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
 }
 
 /* ==========================================
@@ -652,6 +723,13 @@ img {
     font-size: 0.75rem;
     color: var(--text-muted);
     margin-bottom: 4px;
+}
+
+.cert-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 12px;
 }
 
 .cert-image-wrapper {
